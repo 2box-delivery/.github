@@ -1,0 +1,45 @@
+name: Feature Request
+about: File a bug report
+title: "[Feature Request]: "
+labels:
+    - Kind/Feature
+body:
+    - type: dropdown
+      id: subsystem
+      attributes:
+          label: В яких підсистемах буде ця фіча?
+          multiple: true
+          options:
+              - Backend
+              - Frontend
+              - Worker
+              - Third-party
+              - Infrastructure
+      validations:
+          required: true
+    - type: textarea
+      id: description
+      attributes:
+          label: Опис
+          placeholder:
+      validations:
+          required: true
+    - type: markdown
+      attributes:
+          value: |
+              Після створення цього запиту, потрібно створити робочу гілку та вказати її у ствреній issue. Для створення гілки вам знадобиться її 
+              назва. Для цього скористуйтеся [сторінкою в Wiki](test-malefici-com/documentation/wiki/Гілки).
+              
+              Далі скористуйтеся командами Git Flow.
+              
+              Створити гілку фічі:
+              
+              ```
+              git flow feature start 123-my-super-feature
+              ```
+              
+              Опублікувати гілку фічі:
+              
+              ```
+              git flow feature publish 123-my-super-feature
+              ```
